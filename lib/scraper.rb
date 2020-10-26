@@ -13,15 +13,13 @@ class Scraper
     def first_scrape
         html = open(@url)
         artists_elements = Nokogiri::HTML(open(html))
-        # @artist_url = ""
+       
         artists_elements.css(".project-percent").each do |artist|
             name = artist.css(".text-block-3").text
             artist_url = @base_url + artist.css("a").attribute("href").value
             artist = Artist.new(name, artist_url) 
             
         end
-        #  @artist_array
-        #  binding.pry
     end
 
     def second_scrape (artist)
