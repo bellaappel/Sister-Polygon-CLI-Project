@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative "../environment.rb"
 
 # url = "https://www.sisterpolygonrecords.com/artists"
@@ -5,4 +6,6 @@ require_relative "../environment.rb"
 #  artists = html_parsed_to_elements.css(".project-percent").css(".text-block-3").text
 #  binding.pry
 
-CLI.new
+program_start = CLI.new
+program_start.intro
+program_start.run
